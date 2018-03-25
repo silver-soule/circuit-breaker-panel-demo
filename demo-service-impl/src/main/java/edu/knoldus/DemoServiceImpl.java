@@ -24,6 +24,7 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public ServiceCall<NotUsed, String> getHelloOrFail(int index) {
         return (request) -> circuitBreaker
-                .withCircuitBreaker("breakerA", () -> CompletableFuture.completedFuture(random.getSomethingRandom(index)));
+                .withCircuitBreaker("breakerA",
+                        () -> CompletableFuture.completedFuture(random.getSomethingRandom(index)));
     }
 }

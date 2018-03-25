@@ -12,6 +12,5 @@ public class DemoLoader extends AbstractModule implements ServiceGuiceSupport {
     protected void configure() {
         bindService(DemoService.class, DemoServiceImpl.class);
         bind(Random.class).to(RandomImpl.class);
-        bind(CircuitBreakersPanel.class).to(CircuitBreakersPanelImpl.class);
     }
 }
