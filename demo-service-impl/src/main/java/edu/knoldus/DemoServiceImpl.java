@@ -1,6 +1,7 @@
 package edu.knoldus;
 
 import akka.NotUsed;
+import com.lightbend.lagom.internal.javadsl.client.CircuitBreakersPanelImpl;
 import com.lightbend.lagom.javadsl.api.ServiceCall;
 import com.lightbend.lagom.javadsl.client.CircuitBreakersPanel;
 import edu.knoldus.Random.Random;
@@ -18,7 +19,6 @@ public class DemoServiceImpl implements DemoService {
     public DemoServiceImpl(Random random, CircuitBreakersPanel circuitBreaker) {
         this.random = random;
         this.circuitBreaker = circuitBreaker;
-        
     }
     
     @Override
