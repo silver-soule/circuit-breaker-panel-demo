@@ -17,7 +17,7 @@ public interface DemoService extends Service {
     default Descriptor descriptor() {
         return named("circuit-breaker-demo")
                 .withCalls(
-                        restCall(GET, "/random/:index", this::getHelloOrFail)
-                );
+                        restCall(GET, "/random/:id", this::getHelloOrFail)
+                ).withAutoAcl(true);
     }
 }

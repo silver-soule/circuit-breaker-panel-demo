@@ -3,6 +3,7 @@ package edu.knoldus.Random;
 import java.util.NoSuchElementException;
 
 public class RandomImpl implements Random {
+    
     @Override
     public String getSomethingRandom(int index) {
         if (index < 0) {

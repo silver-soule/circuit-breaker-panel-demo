@@ -25,7 +25,6 @@
         <artifactId>lagom-maven-plugin</artifactId>
         <version>${lagom.version}</version>
         <configuration>
-          <serviceGatewayPort>9010</serviceGatewayPort>
           <cassandraEnabled>false</cassandraEnabled>
           <kafkaEnabled>false</kafkaEnabled>
         </configuration>
