@@ -3,20 +3,20 @@ package edu.knoldus;
 import akka.NotUsed;
 import com.lightbend.lagom.javadsl.api.ServiceCall;
 import com.lightbend.lagom.javadsl.client.CircuitBreakersPanel;
-import edu.knoldus.Random.Random;
+import edu.knoldus.Random.SillyRepository;
 
 import javax.inject.Inject;
 import java.util.concurrent.CompletableFuture;
 
 public class DemoServiceImpl implements DemoService {
     
-    private Random random;
+    private SillyRepository sillyRepository;
     
     private CircuitBreakersPanel circuitBreaker;
     
     @Inject
-    public DemoServiceImpl(Random random, CircuitBreakersPanel circuitBreaker) {
-        this.random = random;
+    public DemoServiceImpl(SillyRepository sillyRepository, CircuitBreakersPanel circuitBreaker) {
+        this.sillyRepository = sillyRepository;
         this.circuitBreaker = circuitBreaker;
     }
     
@@ -24,6 +24,6 @@ public class DemoServiceImpl implements DemoService {
     public ServiceCall<NotUsed, String> getHelloOrFail(int index) {
         return (request) -> circuitBreaker
                 .withCircuitBreaker("breakerA",
-                        () -> CompletableFuture.completedFuture(random.getSomethingRandom(index)));
+                        () -> CompletableFuture.completedFuture(sillyRepository.getSomethingRandom(index)));
     }
 }

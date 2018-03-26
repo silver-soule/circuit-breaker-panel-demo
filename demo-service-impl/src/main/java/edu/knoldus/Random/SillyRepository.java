@@ -1,6 +1,6 @@
 package edu.knoldus.Random;
 
-public interface Random {
+public interface SillyRepository {
     
     String getSomethingRandom(int index);
 }

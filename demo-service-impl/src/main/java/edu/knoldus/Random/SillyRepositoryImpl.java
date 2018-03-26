@@ -2,7 +2,7 @@ package edu.knoldus.Random;
 
 import java.util.NoSuchElementException;
 
-public class RandomImpl implements Random {
+public class SillyRepositoryImpl implements SillyRepository {
     
     @Override
     public String getSomethingRandom(int index) {
