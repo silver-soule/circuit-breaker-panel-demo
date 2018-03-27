@@ -1,4 +1,4 @@
-package edu.knoldus.Random;
+package edu.knoldus.repository;
 
 import java.util.NoSuchElementException;
 
